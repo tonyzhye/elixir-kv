@@ -7,7 +7,7 @@ defmodule KV.Registry do
   Starts the registry. 
   """
   def start_link(event_manager, buckets, opts \\ []) do
-    GenServer.start_link(__MODULE__, event_manager, buckets, opts)
+    GenServer.start_link(__MODULE__, {event_manager, buckets}, opts)
   end
 
   @doc """
